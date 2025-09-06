@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile - Orders - Kopi Papa</title>
+    <link rel="stylesheet" href="../CSS/orders.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="https://kit.fontawesome.com/your-font-awesome-kit.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav>
+        <img src="../Image/KopiPapa Logo.png" alt="Kopi Papa Logo" class="logo">
+        <div class="nav-links">
+            <a href="home.html">HOME</a>
+            <a href="menu.html">MENU</a>
+            <a href="reward.html">REWARDS</a>
+            <a href="collab.html" class="collab-btn">COLLAB</a>
+            <div class="about-us-container">
+                <a href="about us.html" class="about-us-link">ABOUT US ▼</a>
+                <ul class="dropdown">
+                    <li><a href="FAQ.html">FAQ</a></li>
+                    <li><a href="feedbackpage.html">FEEDBACK</a></li>
+                    <li><a href="charity.html">CHARITY</a></li>
+                </ul>
+            </div>
+            <a href="cart.html">CART</a>
+            <a href="../PHP/profile.php"><i class="fa-solid fa-user"></i></a>
+        </div>
+    </nav>
+
+    <div class="profile-header">
+        <h1>ORDERS</h1>
+    </div>
+
+    <div class="profile-container">
+        <div class="profile-layout">
+            <div class="profile-nav">
+                <ul>
+                    <li><a href="../PHP/profile.php">HOME</a></li>
+                    <li><a href="../html/edit.html">EDIT PROFILE</a></li>
+                    <li><a href="../PHP/profile_my_rewards.php">MY REWARDS</a></li>
+                    <li><a href="../html/orders.html" class="active">ORDERS</a></li>
+                    <li><a href="../PHP/logout.php">LOG OUT</a></li>
+                </ul>
+            </div>
+
+            <div class="profile-content">
+                <div class="orders-list" id="ordersList">
+                    <!-- Orders will be loaded here dynamically -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- Receipt Modal -->
+<div id="receiptModal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center p-4 overflow-y-auto">
+    <div class="bg-white rounded-lg shadow-xl w-full max-w-2xl my-4"> <!-- Changed from max-w-3xl to max-w-2xl -->
+        <!-- Close button -->
+        <div class="relative">
+            <button class="close absolute right-4 top-4 text-gray-500 hover:text-gray-700">
+                <span class="text-2xl">&times;</span>
+            </button>
+        </div>
+
+        <!-- Receipt content -->
+        <div class="p-6"> <!-- Changed from p-8 to p-6 to reduce padding -->
+            <!-- Header -->
+            <div class="text-center mb-6"> <!-- Changed from mb-8 to mb-6 -->
+                <div class="w-24 h-24 mx-auto mb-3"> <!-- Changed from w-32 h-32 to w-24 h-24 -->
+                    <img src="../Image/KopiPapa Logo.png" alt="Kopi Papa Logo" class="w-full h-full object-contain">
+                </div>
+                <h2 class="text-2xl font-bold text-gray-800">ORDER RECEIPT</h2> <!-- Changed from text-3xl to text-2xl -->
+            </div>
+
+            <!-- Order Info -->
+            <div class="grid grid-cols-2 gap-6 mb-6"> <!-- Changed from gap-8 mb-8 to gap-6 mb-6 -->
+                <div class="space-y-2">
+                    <div class="flex justify-between border-b pb-2">
+                        <span class="font-semibold">Order ID:</span>
+                        <span id="receiptOrderId"></span>
+                    </div>
+                    <div class="flex justify-between border-b pb-2">
+                        <span class="font-semibold">Date:</span>
+                        <span id="receiptDate"></span>
+                    </div>
+                </div>
+                <div class="space-y-2">
+                    <div class="flex justify-between border-b pb-2">
+                        <span class="font-semibold">Customer:</span>
+                        <span id="receiptCustomer"></span>
+                    </div>
+                    <div class="flex justify-between border-b pb-2">
+                        <span class="font-semibold">Email:</span>
+                        <span id="receiptEmail"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Order Details -->
+            <div class="bg-gray-50 p-4 rounded-lg mb-6"> <!-- Changed from p-6 mb-8 to p-4 mb-6 -->
+                <h3 class="text-lg font-bold mb-3 text-gray-800">Order Details</h3> <!-- Changed from text-xl mb-4 to text-lg mb-3 -->
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="space-y-2"> <!-- Changed from space-y-3 to space-y-2 -->
+                        <div class="flex justify-between">
+                            <span class="font-semibold">Product:</span>
+                            <span id="receiptProduct"></span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="font-semibold">Variant:</span>
+                            <span id="receiptVariant"></span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="font-semibold">Size:</span>
+                            <span id="receiptSize"></span>
+                        </div>
+                    </div>
+                    <div class="space-y-2"> <!-- Changed from space-y-3 to space-y-2 -->
+                        <div class="flex justify-between">
+                            <span class="font-semibold">Sugar:</span>
+                            <span id="receiptSugar"></span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="font-semibold">Ice:</span>
+                            <span id="receiptIce"></span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="font-semibold">Quantity:</span>
+                            <span id="receiptQuantity"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Total -->
+            <div class="bg-gray-800 text-white p-4 rounded-lg mb-6"> <!-- Changed from p-6 mb-8 to p-4 mb-6 -->
+                <div class="flex justify-between items-center">
+                    <span class="text-lg font-bold">Total</span> <!-- Changed from text-xl to text-lg -->
+                    <span class="text-xl font-bold">RM<span id="receiptTotal"></span></span> <!-- Changed from text-2xl to text-xl -->
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="text-center text-gray-600">
+                <p class="text-base font-semibold">Thank you for choosing Kopi Papa!</p> <!-- Changed from text-lg to text-base -->
+                <p class="text-sm mt-1">Visit us again soon!</p> <!-- Changed from mt-2 to mt-1 -->
+            </div>
+        </div>
+    </div>
+</div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>Copyright &copy; 2023 Kopi Papa. All rights reserved.</p>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/profile.php?id=61556348262104" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/kopipapahq/?hl=en" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@kopi.papa.hq" target="_blank"><i class="fab fa-tiktok"></i></a>
+            </div>
+        </div>
+
+        <script src="../Javascript/orders.js"></script>
+    </footer>
+</body>
+</html>

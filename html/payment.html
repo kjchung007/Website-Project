@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page - Online Banking</title>
+    <link rel="stylesheet" href="../CSS/payment.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <img src="../Image/KopiPapa Logo.png" alt="Kopi Papa Logo" class="logo">
+        <div class="nav-links">
+            <a href="home.html">HOME</a>
+            <a href="menu.html">MENU</a>
+            <a href="reward.html">REWARDS</a>
+            <a href="collab.html" class="collab-btn">COLLAB</a>
+            <div class="about-us-container">
+                <a href="about us.html" class="about-us-link">ABOUT US ▼</a>
+                <ul class="dropdown">
+                    <li><a href="FAQ.html">FAQ</a></li>
+                    <li><a href="feedbackpage.html">FEEDBACK</a></li>
+                    <li><a href="charity.html">CHARITY</a></li>
+                </ul>
+            </div>
+            <a href="cart.html">CART</a>
+            <a href="../PHP/profile.php"><i class="fa-solid fa-user"></i></a>
+        </div>
+    </nav>
+    <div class="payment">
+        <div class="payment-card">
+            <div class="payment-form">
+                <form id="paymentForm" method="POST">
+                    <h2>Personal Information</h2>
+                    
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="Your Name" required readonly>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group full-half">
+                            <input type="email" name="email" placeholder="Email" required readonly>
+                        </div>
+                        <div class="form-group full-half">
+                            <input type="tel" name="phone" placeholder="Phone Number" required>
+                        </div>
+                    </div>
+
+                    <h3>Pickup Location</h3>
+                    <div class="form-row">
+                        <div class="form-group full-half">
+                            <input type="radio" name="pickupLocation" id="cityOne" value="City One" class="location-radio" required>
+                            <label for="cityOne" class="location-label">City One</label>
+                        </div>
+                        <div class="form-group full-half">
+                            <input type="radio" name="pickupLocation" id="tt3" value="TT3" class="location-radio" required>
+                            <label for="tt3" class="location-label">TT3</label>
+                        </div>
+                    </div>
+
+                    <h3>Voucher</h3>
+                    <div class="form-group voucher-group">
+                        <input type="text" name="voucher" placeholder="Select Voucher">
+                        <span class="voucher-token"></span>
+                    </div>
+
+                    <h3>Payment Methods</h3>
+                    <div class="payment-methods">
+                        <a href="#paymentpage.html" onclick="selectPaymentMethod('banking'); return false;">
+                            <label class="radio-label">
+                                <input type="radio" name="paymentMethod" value="banking" checked>
+                                Online Banking
+                            </label>
+                        </a>
+                        <a href="#creditordebit.html" onclick="selectPaymentMethod('card'); return false;">
+                            <label class="radio-label">
+                                <input type="radio" name="paymentMethod" value="card">
+                                Credit or Debit
+                            </label>
+                        </a>
+                    </div>
+
+                    <!-- Online Banking Fields -->
+                    <div id="bankingFields" class="payment-fields">
+                        <div class="form-group">
+                            <select name="bankName" class="bank-select" required>
+                                <option value="" disabled selected>Select Bank</option>
+                                <option value="maybank">Maybank</option>
+                                <option value="cimb">CIMB Bank</option>
+                                <option value="public">Public Bank</option>
+                                <option value="rhb">RHB Bank</option>
+                                <option value="hongleong">Hong Leong Bank</option>
+                                <option value="ambank">AmBank</option>
+                                <option value="uob">UOB Bank</option>
+                                <option value="ocbc">OCBC Bank</option>
+                                <option value="bsn">Bank Simpanan Nasional</option>
+                                <option value="alliance">Alliance Bank</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="accountNumber" placeholder="Account Number">
+                        </div>
+                    </div>
+
+                    <!-- Credit/Debit Card Fields -->
+                    <div id="cardFields" class="payment-fields" style="display: none;">
+                        <div class="form-group">
+                            <input type="text" name="cardholderName" placeholder="Cardholder Name">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="cardNumber" placeholder="Card Number">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group full-half">
+                                <input type="text" name="expDate" placeholder="MM/YY">
+                            </div>
+                            <div class="form-group full-half">
+                                <input type="text" name="cvc" placeholder="CVC">
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="pay-button">Pay Now</button>
+                </form>
+            </div>
+
+            
+            <div class="cart-summary">
+                <h2>Order Summary</h2>
+                <div class="cart-items">
+                    <!-- Items will be populated by JavaScript -->
+                </div>
+
+                <div class="cart-totals">
+                    <div class="total-row">
+                        <span>Subtotal</span>
+                        <span>RM0.00</span>
+                    </div>
+                    <div class="total-row">
+                        <span>Discount</span>
+                        <span>RM0.00</span>
+                    </div>
+                    <div class="total-row total-final">
+                        <span>Total</span>
+                        <span>RM0.00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="payment-success" style="display: none;">
+        <h2>Payment Successful!</h2>
+        <p>Thank you for your purchase. Your order will be processed shortly.</p>
+        <button onclick="window.location.href='home.html'">Go to Homepage</button>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>Copyright &copy; 2023 Kopi Papa. All rights reserved.</p>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/profile.php?id=61556348262104" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/kopipapahq/?hl=en" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@kopi.papa.hq" target="_blank"><i class="fab fa-tiktok"></i></a>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="../Javascript/payment.js"></script>
+    </body>
+    </html>

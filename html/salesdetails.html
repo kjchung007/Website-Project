@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Details</title>
+    <link rel="stylesheet" href="../CSS/salesdetails.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <img src="../Image/KopiPapa Logo.png" alt="Kopi Papa Logo" class="logo">
+        <div class="nav-links">
+            <a href="admindashboard.html">HOME</a>
+            <a href="../PHP/product.php">PRODUCT</a>
+            <div class="records-container">
+                <a href="records.html" class="records-link">RECORDS ▼</a>
+                <ul class="dropdown">
+                    <li><a href="salesdetails.html">SALES DETAILS</a></li>
+                    <li><a href="transaction.html">TRANSACTION REPORT</a></li>
+                </ul>
+            </div>
+            <a href="accounts.html">ACCOUNTS</a>
+            <a href="../PHP/profile.php"><i class="fa-solid fa-user"></i></a>
+        </div>
+    </nav>
+
+    <div class="profile-header">
+        <h1>SALES DETAILS</h1>
+    </div>
+
+    <main class="main-content">
+        <div class="sales-panel">
+            <div class="panel-header">
+                <h1 class="panel-title"></h1>
+                <div class="filter-icon" onclick="toggleFilterMenu()">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 3H2l8 9.46V19l4 2v-8.54L22 3z"/>
+                    </svg>
+                    <div id="filterMenu" class="filter-menu">
+                        <div onclick="sortTable('orderId')">Sort by Order ID</div>
+                        <div onclick="sortTable('date')">Sort by Date & Time</div>
+                        <div onclick="sortTable('name')">Sort by Customer Name</div>
+                        <div onclick="sortTable('total')">Sort by Order Total</div>
+                    </div>
+                </div>
+            </div>
+            <div class="sales-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Date & Time</th>
+                            <th>Customer Name</th>
+                            <th>Item Name</th>
+                            <th>Quantity</th>
+                            <th>Unit Price</th>
+                            <th>Item Total</th>
+                            <th>Order Total</th>
+                        </tr>
+
+                    </thead>
+                    <tbody id="salesTableBody">
+                        <!-- Data will be populated here by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>Copyright &copy; 2023 Kopi Papa. All rights reserved.</p>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/profile.php?id=61556348262104" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/kopipapahq/?hl=en" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@kopi.papa.hq" target="_blank"><i class="fab fa-tiktok"></i></a>
+            </div>
+        </div>
+    </footer>
+    <script src="../Javascript/salesdetails.js"></script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../CSS/style.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <nav>
+        <img src="../Image/KopiPapa Logo.png" alt="Kopi Papa Logo" class="logo">
+        <div class="nav-links">
+            <a href="home.html">HOME</a>
+            <a href="menu.html">MENU</a>
+            <a href="reward.html">REWARDS</a>
+            <a href="collab.html" class="collab-btn">COLLAB</a>
+            <div class="about-us-container">
+                <a href="about us.html" class="about-us-link">ABOUT US ▼</a>
+                <ul class="dropdown">
+                    <li><a href="FAQ.html">FAQ</a></li>
+                    <li><a href="feedbackpage.html">FEEDBACK</a></li>
+                    <li><a href="charity.html">CHARITY</a></li>
+                </ul>
+            </div>
+            <a href="cart.html">CART</a>
+            <a href="../PHP/profile.php"><i class="fa-solid fa-user"></i></a>
+        </div>
+    </nav>
+    <section class="hero">
+        <div class="hero-container">
+            <div class="column-left">
+                <h1>Take a moment to breathe - let the aroma of Kopi Papa refresh your day</h1>
+                <p>Explore our signature brews and bring the warmth of Kopi Papa to your home today</p>
+                <button>ORDER NOW</button>
+            </div>
+            <div class="column-right">
+                <img src="../Image/landing Page.jpg" alt="illustration" class="hero-image">
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <p>Copyright &copy; 2023 Kopi Papa. All rights reserved.</p>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/profile.php?id=61556348262104" target="_blank"> <i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/kopipapahq/?hl=en" target="_blank"> <i class="fab fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@kopi.papa.hq" target="_blank"> <i class="fab fa-tiktok"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('profileLink').addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Make an AJAX call to check login status
+            fetch('check_login.php')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.isLoggedIn) {
+                        // User is logged in, redirect to profile page
+                        window.location.href = 'profile.html';
+                    } else {
+                        // User is not logged in, redirect to login page
+                        window.location.href = 'login.html';
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    // In case of error, redirect to login page
+                    window.location.href = 'login.html';
+                });
+        });
+    </script>
+</body>
+</html>

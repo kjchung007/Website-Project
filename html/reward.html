@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kopi Papa</title>
+    <link rel="stylesheet" href="../CSS/reward.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <img src="../Image/KopiPapa Logo.png" alt="Kopi Papa Logo" class="logo">
+        <div class="nav-links">
+            <a href="home.html">HOME</a>
+            <a href="menu.html">MENU</a>
+            <a href="reward.html">REWARDS</a>
+            <a href="collab.html" class="collab-btn">COLLAB</a>
+            <div class="about-us-container">
+                <a href="about us.html" class="about-us-link">ABOUT US ▼</a>
+                <ul class="dropdown">
+                    <li><a href="FAQ.html">FAQ</a></li>
+                    <li><a href="feedbackpage.html">FEEDBACK</a></li>
+                    <li><a href="charity.html">CHARITY</a></li>
+                </ul>
+            </div>
+            <a href="cart.html">CART</a>
+            <a href="../PHP/profile.php"><i class="fa-solid fa-user"></i></a>
+        </div>
+    </nav>
+    <div class="curved">
+        <h1>Rewards</h1>
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="shape-fill"></path>
+        </svg>
+    </div>
+    <div class="rewards-content">
+        <p class="rewards-text">CHECK YOUR REWARDS BALANCE AND SEE WHAT'S WAITING FOR YOU!</p>
+        
+        <!-- Rewards Balance Card -->
+        <div class="balance-card">
+            <img src="../Image/Papa Kopi Ping Kaw.png" alt="Kopi Papa Drink" class="drink-thumb">
+            <div class="balance-info">
+                <p class="rewards-label">KOPI PAPA REWARDS</p>
+                <div class="points">
+                    <span class="current-points">16</span>
+                    <span class="total-points">/ 100 pts</span>
+                </div>
+                <div class="points-remaining">84 points left to get next reward</div>
+            </div>
+        </div>
+
+        <h2 class="redeem-title">REDEEM REWARDS</h2>
+        
+        <!-- Voucher Grid -->
+        <div class="voucher-grid">
+            <div class="voucher-card">
+                <div class="voucher-info">
+                    <img src="../Image/voucher1.png" alt="Kopi Papa Voucher" class="voucher-thumb">
+                </div>
+                <div class="points-required">100 POINTS</div>
+                <div class="voucher-name">RM 1 OFF VOUCHER</div>
+            </div>
+
+            <div class="voucher-card">
+                <div class="voucher-info">
+                    <img src="../Image/voucher2.png" alt="Kopi Papa Voucher" class="voucher-thumb">
+                </div>
+                <div class="points-required">300 POINTS</div>
+                <div class="voucher-name">RM 3 OFF VOUCHER</div>
+            </div>
+
+            <div class="voucher-card">
+                <div class="voucher-info">
+                    <img src="../Image/voucher3.png" alt="Kopi Papa Voucher" class="voucher-thumb">
+                </div>
+                <div class="points-required">500 POINTS</div>
+                <div class="voucher-name">RM 5 OFF VOUCHER</div>
+            </div>
+
+            <div class="voucher-card">
+                <div class="voucher-info">
+                    <img src="../Image/voucher4.png" alt="Kopi Papa Voucher" class="voucher-thumb">
+                </div>
+                <div class="points-required">700 POINTS</div>
+                <div class="voucher-name">FREE ANY 1 BEVERAGE VOUCHER</div>
+            </div>
+        </div>
+
+        <!-- How it Works Section -->
+        <div class="how-it-works">
+            <h2>HOW IT WORKS?</h2>
+            <ol>
+                <li>Earn Points: Get 1 Points For Every RM1 Spent</li>
+                <li>Points Are Deducted Upon Redemption</li>
+                <li>Redemptions Cannot Be Cancelled, And Points Are Not Refundable</li>
+            </ol>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <p>Copyright &copy; 2023 Kopi Papa. All rights reserved.</p>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/profile.php?id=61556348262104" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/kopipapahq/?hl=en" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@kopi.papa.hq" target="_blank"><i class="fab fa-tiktok"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelector('button').addEventListener('click', function() {
+    alert('Thank you for your interest! Our ordering system will be available soon.');
+});
+
+// Only apply smooth scrolling to links that start with # AND have a matching element on the page
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        const targetId = this.getAttribute('href').substring(1); // Remove the # from href
+        const targetElement = document.getElementById(targetId);
+        
+        if (targetElement) { // Only scroll if the element exists on the page
+            e.preventDefault();
+            targetElement.scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+        // If element doesn't exist, let the default navigation happen
+    });
+});
+    </script>
+</body>
+</html>
+

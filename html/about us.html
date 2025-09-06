@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kopi Papa</title>
+    <link rel="stylesheet" href="../CSS/About Us.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <img src="../Image/KopiPapa Logo.png" alt="Kopi Papa Logo" class="logo">
+        <div class="nav-links">
+            <a href="home.html">HOME</a>
+            <a href="menu.html">MENU</a>
+            <a href="reward.html">REWARDS</a>
+            <a href="collab.html" class="collab-btn">COLLAB</a>
+            <div class="about-us-container">
+                <a href="about us.html" class="about-us-link">ABOUT US ▼</a>
+                <ul class="dropdown">
+                    <li><a href="FAQ.html">FAQ</a></li>
+                    <li><a href="feedbackpage.html">FEEDBACK</a></li>
+                    <li><a href="charity.html">CHARITY</a></li>
+                </ul>
+            </div>
+            <a href="cart.html">CART</a>
+            <a href="../PHP/profile.php"><i class="fa-solid fa-user"></i></a>
+        </div>
+    </nav>
+    <div class="hero">
+        <div class="hero-container">
+            <div class="column-left">
+                <h1>About Us</h1>
+                <p>Welcome to Kopi Papa, a cozy coffee shop located in the heart of Kuching, where every cup is brewed with passion and care. We are dedicated to serving the finest coffee and tea, blending traditional flavors with a modern twist to create a space where everyone feels at home.</p>
+                
+                <p>At Kopi Papa, we believe that great beverages bring people together. Whether you're a coffee connoisseur seeking the perfect espresso, a tea lover savoring aromatic blends, or just someone looking for a quiet spot to relax, we have something special for you.</p>
+                
+                <p>Our carefully crafted menu features:</p>
+                <ul class="feature-list">
+                    <li>Freshly Brewed Coffee: From bold espressos to creamy lattes.</li>
+                    <li>Aromatic Teas: Infused with rich, soothing flavors.</li>
+                    <li>Snacks and Light Bites: The perfect companions to your drink.</li>
+                </ul>
+                
+                <p>Our mission is simple: to create a place where everyone can pause, connect, and enjoy a moment of peace with a delicious drink in hand. Thank you for being part of the Kopi Papa story.</p>
+                
+                <p class="tagline">Kopi Papa - Brewing Memories, One Cup at a Time.</p>
+                
+                <button>ORDER NOW</button>
+            </div>
+            <div class="column-right">
+                <img src="../Image/About Us.jpg" alt="Kopi Papa Interior" class="hero-image">
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>Copyright &copy; 2023 Kopi Papa. All rights reserved.</p>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/profile.php?id=61556348262104" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/kopipapahq/?hl=en" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@kopi.papa.hq" target="_blank"><i class="fab fa-tiktok"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelector('button').addEventListener('click', function() {
+    alert('Thank you for your interest! Our ordering system will be available soon.');
+});
+
+// Only apply smooth scrolling to links that start with # AND have a matching element on the page
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        const targetId = this.getAttribute('href').substring(1); // Remove the # from href
+        const targetElement = document.getElementById(targetId);
+        
+        if (targetElement) { // Only scroll if the element exists on the page
+            e.preventDefault();
+            targetElement.scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+        // If element doesn't exist, let the default navigation happen
+    });
+});
+    </script>
+</body>
+</html>

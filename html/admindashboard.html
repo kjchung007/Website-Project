@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="../CSS/admindashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="https://kit.fontawesome.com/your-font-awesome-kit.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav>
+        <img src="../Image/KopiPapa Logo.png" alt="Kopi Papa Logo" class="logo">
+        <div class="nav-links">
+            <a href="admindashboard.html">HOME</a>
+            <a href="../PHP/product.php">PRODUCT</a>
+            <div class="records-container">
+                <a href="records.html" class="records-link">RECORDS ▼</a>
+                <ul class="dropdown">
+                    <li><a href="salesdetails.html">SALES DETAILS</a></li>
+                    <li><a href="transaction.html">TRANSACTION REPORT</a></li>
+                </ul>
+            </div>
+            <a href="accounts.html">ACCOUNTS</a>
+            <a href="../PHP/profile.php"><i class="fa-solid fa-user"></i></a>
+        </div>
+    </nav>
+
+    <div class="profile-header">
+        <h1>DASHBOARD</h1>
+    </div>
+
+    <div class="dashboard-container">
+        <!-- Statistics Cards -->
+        <div class="stats-container">
+            <!-- Total User Card -->
+            <div class="stat-card">
+                <div class="stat-content">
+                    <p class="stat-title">TOTAL USER</p>
+                    <div class="stat-number-row">
+                        <h2 class="stat-number">12540</h2>
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                    </div>
+                    <p class="stat-comparison">8.5% UP FROM YESTERDAY</p>
+                </div>
+            </div>
+            
+            <!-- Total Order Card -->
+            <div class="stat-card">
+                <div class="stat-content">
+                    <p class="stat-title">TOTAL ORDER</p>
+                    <div class="stat-number-row">
+                        <h2 class="stat-number">6544</h2>
+                        <div class="stat-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                    </div>
+                    <p class="stat-comparison">2.6% UP FROM PAST WEEK</p>
+                </div>
+            </div>
+
+            <!-- Total Sales Card -->
+            <div class="stat-card">
+                <div class="stat-content">
+                    <p class="stat-title">TOTAL SALES</p>
+                    <div class="stat-number-row">
+                        <h2 class="stat-number">RM86531</h2>
+                        <div class="stat-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                    </div>
+                    <p class="stat-comparison">3.4% DOWN FROM PAST WEEK</p>
+                </div>
+            </div>
+
+        <!-- Collaboration Section -->
+        <div class="collaboration-section">
+            <div class="collab-card">
+                <h3 class="collab-title">COLLABORATION</h3>
+                <div class="collab-content">
+                    <img src="../Image/ZUS3.png" alt="ZUS Coffee Logo" class="collab-logo">
+                    <div class="collab-info">
+                        <div class="collab-names">
+                            <span>KOPI PAPA</span>
+                            <span class="collab-x">X</span>
+                            <span>ZUS Coffee</span>
+                        </div>
+                        <p class="collab-date">LIMITED TIME: 29/02/2024 - 02/03/2024</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>Copyright &copy; 2023 Kopi Papa. All rights reserved.</p>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/profile.php?id=61556348262104" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/kopipapahq/?hl=en" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@kopi.papa.hq" target="_blank"><i class="fab fa-tiktok"></i></a>
+            </div>
+        </div>
+
+    </footer>
+</body>
+</html>

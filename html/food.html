@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Kopi Papa</title>
+   <link rel="stylesheet" href="../CSS/menu.css"/>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+   <nav>
+    <img src="../Image/KopiPapa Logo.png" alt="Kopi Papa Logo" class="logo">
+    <div class="nav-links">
+        <a href="home.html">HOME</a>
+        <a href="menu.html">MENU</a>
+        <a href="reward.html">REWARDS</a>
+        <a href="collab.html" class="collab-btn">COLLAB</a>
+        <div class="about-us-container">
+            <a href="about us.html" class="about-us-link">ABOUT US ▼</a>
+            <ul class="dropdown">
+                <li><a href="FAQ.html">FAQ</a></li>
+                <li><a href="feedbackpage.html">FEEDBACK</a></li>
+                <li><a href="charity.html">CHARITY</a></li>
+            </ul>
+        </div>
+        <a href="cart.html">CART</a>
+        <a href="../PHP/profile.php"><i class="fa-solid fa-user"></i></a>
+    </div>
+   </nav>
+    <div class="curved">
+        <h1>MENU</h1>
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="shape-fill"></path>
+        </svg>
+    </div>
+       <div class="menu-tabs">
+        <a href="menu.html" class="menu-tab">DRINKS</a>
+        <span class="divider">|</span>
+        <a href="food.html" class="menu-tab active">FOOD</a>
+        </div>
+   </div>
+   <div class="drinks-grid">
+        <!-- Products will be loaded here dynamically -->
+   </div>
+
+   <div id="customizationModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 class="modal-title">CUSTOMIZE YOUR DRINK!</h2>
+            
+            <div class="drink-preview">
+                <img id="modalDrinkImage" src="" alt="Drink Image">
+            </div>
+
+            <div class="drink-info">
+                <div class="drink-header">
+                    <div class="drink-name-price">
+                        <h3 id="modalDrinkName"></h3>
+                        <p id="modalDrinkPrice"></p>
+                    </div>
+                    <div class="quantity-control">
+                        <button type="button" class="quantity-btn minus">
+                            <i class="fas fa-minus"></i> 
+                        </button>
+                        <input type="number" id="quantity" value="1" min="1" max="10" readonly>
+                        <button type="button" class="quantity-btn plus">
+                            <i class="fas fa-plus"></i> 
+                        </button>
+                    </div>                
+                </div>
+
+                <div class="modal-footer">
+                    <div class="total-price">
+                        <span>Total</span>
+                        <span id="modalTotalPrice">RM0.00</span>
+                    </div>
+                    <div class="action-buttons">
+                        <button type="button" class="action-buttons-buy" id="buyNowBtn">Buy Now</button>
+                        <button type="button" class="action-buttons-cart" id="addToCartBtn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   <footer class="footer">
+       <div class="container">
+           <p>Copyright &copy; 2023 Kopi Papa. All rights reserved.</p>
+           <div class="social-icons">
+               <a href="https://www.facebook.com/profile.php?id=61556348262104" target="_blank"><i class="fab fa-facebook"></i></a>
+               <a href="https://www.instagram.com/kopipapahq/?hl=en" target="_blank"><i class="fab fa-instagram"></i></a>
+               <a href="https://www.tiktok.com/@kopi.papa.hq" target="_blank"><i class="fab fa-tiktok"></i></a>
+           </div>
+       </div>
+   </footer>
+   <script src="../Javascript/menu.js"></script>
+</body>
+</html>

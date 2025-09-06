@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Kopi Papa</title>
+    <link rel="stylesheet" href="../CSS/FAQ.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <img src="../Image/KopiPapa Logo.png" alt="Kopi Papa Logo" class="logo">
+        <div class="nav-links">
+            <a href="home.html">HOME</a>
+            <a href="menu.html">MENU</a>
+            <a href="reward.html">REWARDS</a>
+            <a href="collab.html" class="collab-btn">COLLAB</a>
+            <div class="about-us-container">
+                <a href="about us.html" class="about-us-link">ABOUT US ▼</a>
+                <ul class="dropdown">
+                    <li><a href="FAQ.html">FAQ</a></li>
+                    <li><a href="feedbackpage.html">FEEDBACK</a></li>
+                    <li><a href="charity.html">CHARITY</a></li>
+                </ul>
+            </div>
+            <a href="cart.html">CART</a>
+            <a href="../PHP/profile.php"><i class="fa-solid fa-user"></i></a>
+        </div>
+    </nav>
+
+    <div class="curved">
+        <h1>FAQ</h1>
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="shape-fill"></path>
+        </svg>
+    </div>
+
+    <div class="faq-container">
+        <div class="faq-item">
+            <div class="faq-question-container">
+                <h1>What are your opening hours?</h1>
+                <button class="faq-toggle-btn"><i class="fas fa-plus"></i></button>
+            </div>
+            <div class="faq-answer">
+                <p>We are open daily from 8:00 AM to 10:00 PM.</p>
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question-container">
+                <h1>Do you offer delivery services?</h1>
+                <button class="faq-toggle-btn"><i class="fas fa-plus"></i></button>
+            </div>
+            <div class="faq-answer">
+                <p>Yes, we offer delivery through various platforms including GrabFood and Foodpanda.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question-container">
+                <h1>Are your coffee beans locally sourced?</h1>
+                <button class="faq-toggle-btn"><i class="fas fa-plus"></i></button>
+            </div>
+            <div class="faq-answer">
+                <p>We source our beans from both local and international suppliers to ensure the highest quality.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>Copyright &copy; 2023 Kopi Papa. All rights reserved.</p>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/profile.php?id=61556348262104" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/kopipapahq/?hl=en" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@kopi.papa.hq" target="_blank"><i class="fab fa-tiktok"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.faq-toggle-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.closest('.faq-item');
+                const answer = faqItem.querySelector('.faq-answer');
+                const icon = button.querySelector('i');
+                
+                answer.classList.toggle('show');
+                if (answer.classList.contains('show')) {
+                    icon.classList.replace('fa-plus', 'fa-minus');
+                } else {
+                    icon.classList.replace('fa-minus', 'fa-plus');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

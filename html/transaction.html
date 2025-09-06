@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction Report</title>
+    <link rel="stylesheet" href="../CSS/transaction.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <img src="../Image/KopiPapa Logo.png" alt="Kopi Papa Logo" class="logo">
+        <div class="nav-links">
+            <a href="admindashboard.html">HOME</a>
+            <a href="../PHP/product.php">PRODUCT</a>
+            <div class="records-container">
+                <a href="records.html" class="records-link">RECORDS ▼</a>
+                <ul class="dropdown">
+                    <li><a href="salesdetails.html">SALES DETAILS</a></li>
+                    <li><a href="transaction.html">TRANSACTION REPORT</a></li>
+                </ul>
+            </div>
+            <a href="accounts.html">ACCOUNTS</a>
+            <a href="../PHP/profile.php"><i class="fa-solid fa-user"></i></a>
+        </div>
+    </nav>
+
+    <div class="profile-header">
+        <h1>TRANSACTION REPORT</h1>
+    </div>
+
+    <div class="report-container">
+        <div class="filters">
+            <div class="date-filter">
+                <div class="date-navigation">
+                    <input type="date" id="datePicker" class="date-picker">
+                    
+                </div>
+                <div class="time-filter">
+                    <button id="dailyBtn" onclick="filterByTime('daily')">Daily</button>
+                    <button id="weeklyBtn" onclick="filterByTime('weekly')">Weekly</button>
+                    <button id="monthlyBtn" onclick="filterByTime('monthly')">Monthly</button>
+                </div>
+            </div>
+            
+            <div class="search-filter">
+                <input type="text" id="searchInput" placeholder="Search by Transaction Id or Member Name">
+                <button onclick="searchTransactions()">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="arrow-navigation">
+            <button class="nav-btn prev-btn" onclick="navigateDate('prev')">
+                &#10170; <!-- Use the arrow symbol here -->
+            </button>
+            <button class="nav-btn next-btn" onclick="navigateDate('next')">
+                &#10170; <!-- Adjust direction if needed -->
+            </button>
+        </div>
+
+        <div class="transaction-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Transaction ID</th>
+                        <th>Date</th>
+                        <th>Customer</th>
+                        <th>Items</th>
+                        <th>Total Amount</th>
+                        <th>Payment Method</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="transactionBody">
+                    <!-- Transaction rows will be populated by JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>Copyright &copy; 2023 Kopi Papa. All rights reserved.</p>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/profile.php?id=61556348262104" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/kopipapahq/?hl=en" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@kopi.papa.hq" target="_blank"><i class="fab fa-tiktok"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <div id="transactionModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Transaction Details</h2>
+            <div class="modal-sections">
+                <div class="modal-section">
+                    <h3>Order Information</h3>
+                    <p><strong>Transaction ID:</strong> <span id="modalTrxId"></span></p>
+                    <p><strong>Date:</strong> <span id="modalDate"></span></p>
+                    <p><strong>Total Amount:</strong> <span id="modalTotal"></span></p>
+                    <p><strong>Payment Method:</strong> <span id="modalPayment"></span></p>
+                    <p><strong>Status:</strong> <span id="modalStatus"></span></p>
+                </div>
+                <div class="modal-section">
+                    <h3>Customer Details</h3>
+                    <p><strong>Name:</strong> <span id="modalCustomerName"></span></p>
+                    <p><strong>Email:</strong> <span id="modalCustomerEmail"></span></p>
+                </div>
+                <div class="modal-section">
+                    <h3>Order Details</h3>
+                    <div id="modalItems" class="modal-items">
+                        <!-- Items will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../Javascript/transaction.js"></script>
+</body>
+</html>
