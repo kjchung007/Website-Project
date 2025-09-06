@@ -1,0 +1,382 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins';
+}
+
+body {
+    background-color: #273d88;
+    min-height: 100vh;
+}
+
+/* Navigation Styles */
+.logo {
+    width: 80px; 
+    height: auto;   
+    position: relative;
+    margin-left: 20px;
+    align-self: center;
+}
+
+nav {
+    height: 100px;
+    background: #FFFFFF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0rem calc((100vw - 1300px)/2);
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    padding: 0 1.5rem;
+}
+
+nav a:hover {
+    color: #263e88;
+}
+
+.nav-links {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.records-container {
+    position: relative;
+}
+
+.records-link {
+    position: relative;
+    display: block;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    padding: 10px 0;
+    list-style: none;
+    z-index: 100;
+    width: 180px;
+    margin-top: 5px;
+}
+
+.records-container:hover .dropdown {
+    display: block;
+}
+
+.dropdown::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 0;
+    right: 0;
+    height: 20px;
+}
+
+.dropdown li {
+    padding: 0;
+    white-space: nowrap;
+}
+
+.dropdown li a {
+    display: block;
+    padding: 8px 15px;
+    text-decoration: none;
+    color: black;
+    font-size: 12px;
+    text-align: center;
+    white-space: normal;
+    line-height: 1.2;
+}
+
+.dropdown li a[href="transactionreport.html"] {
+    font-size: 11px;
+    padding: 8px 10px;
+}
+
+.dropdown li a:hover {
+    background: #f0f0f0;
+    color: #263e88;
+}
+
+.fa-user {
+    color: #e8b931;
+}
+
+/* Profile Header */
+.profile-header {
+    background: #d4bf99;
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+}
+
+.profile-header h1 {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    color: #FFFFFF;
+}
+
+/* Search Section */
+.search-section {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.search-container input {
+    flex: 1;
+    padding: 15px 20px;
+    border: none;
+    font-size: 16px;
+    outline: none;
+}
+
+.search-container button {
+    padding: 15px 25px;
+    background: #273d88;
+    border-radius: 8px;
+    border: 2.5px solid white;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-container button:hover {
+    background: #1a2a5e;
+}
+
+/* Members Section */
+.members-container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.member-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 20px;
+}
+
+.member-card {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.member-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.member-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 15px;
+}
+
+.member-avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: #f0f0f0;
+    margin-right: 15px;
+}
+
+.member-info h3 {
+    color: #273d88;
+    margin-bottom: 5px;
+    font-size: 1.2em;
+}
+
+.member-details {
+    margin-top: 15px;
+}
+
+.member-details p {
+    margin: 10px 0;
+    color: #444;
+    font-size: 0.95em;
+    display: flex;
+    align-items: center;
+}
+
+.member-details i {
+    margin-right: 10px;
+    color: #273d88;
+    width: 20px;
+}
+
+/* Footer Styles */
+footer {
+    background: #FFFFFF;
+    padding: 2rem 0;
+    margin-top: 4rem;
+    width: 100%;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    padding: 0rem 2rem;
+    margin-bottom: 20px;
+}
+
+.container p {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.social-icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.social-icons a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.fa-facebook, .fa-instagram, .fa-tiktok {
+    font-size: 30px;
+}
+
+.fa-facebook {
+    color: #1a237e;
+}
+
+.fa-instagram {
+    color: #833AB4;
+}
+
+.fa-tiktok {
+    color: black;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .member-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 8px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.button-group {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.save-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.cancel-btn {
+    background-color: #f44336;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.member-card {
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.member-card:hover {
+    transform: scale(1.02);
+}

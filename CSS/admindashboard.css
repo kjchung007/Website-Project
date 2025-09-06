@@ -1,0 +1,356 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins';
+}
+
+.logo {
+    width: 80px; 
+    height: auto;   
+    position: relative;
+    margin-left: 20px;
+    align-self: center;
+}
+
+nav {
+    height: 100px;
+    background: #FFFFFF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0rem calc((100vw - 1300px)/2);
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    padding: 0 1.5rem;
+}
+
+nav a:hover {
+    color: #263e88;
+}
+
+.nav-links {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.records-container {
+    position: relative;  /* Ensure this is the positioning context */
+}
+
+.records-link {
+    position: relative;
+    display: block;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    padding: 10px 0;
+    list-style: none;
+    z-index: 100;
+    width: 180px; /* Increased width to accommodate text */
+    margin-top: 5px;
+}
+
+.records-container:hover .dropdown {
+    display: block;
+}
+
+.dropdown::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 0;
+    right: 0;
+    height: 20px;
+}
+
+.dropdown li {
+    padding: 0;
+    white-space: nowrap;
+}
+
+.dropdown li a {
+    display: block;
+    padding: 8px 15px; /* Slightly reduced padding */
+    text-decoration: none;
+    color: black;
+    font-size: 12px; /* Reduced font size */
+    text-align: center;
+    white-space: normal; /* Allow text to wrap */
+    line-height: 1.2; /* Improve readability */
+}
+
+.dropdown li a[href="transactionreport.html"] {
+    font-size: 11px; /* Even smaller font for transaction report */
+    padding: 8px 10px; /* Adjusted padding */
+}
+
+.dropdown li a:hover {
+    background: #f0f0f0;
+    color: #263e88;
+}
+
+.fa-user {
+    color: #e8b931;
+}
+
+/* Profile Header */
+.profile-header {
+    background: #d4bf99;
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+}
+
+.profile-header h1 {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    color: #FFFFFF;
+}
+
+/* Footer Styles */
+footer {
+    background: #FFFFFF;
+    padding: 2rem 0;
+    margin-top: 4rem;
+    width: 100%;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    padding: 0rem 2rem;
+    margin-bottom: 20px;
+}
+
+.container p {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.social-icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.social-icons a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.fa-facebook, .fa-instagram, .fa-tiktok {
+    font-size: 30px;
+}
+
+.fa-facebook {
+    color: #1a237e;
+}
+
+.fa-instagram {
+    color: #833AB4;
+}
+
+.fa-tiktok {
+    color: black;
+}
+
+body {
+    min-height: 100vh;
+}
+
+.dashboard-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px;
+    margin-top: 20px;
+}
+
+.dashboard-header {
+    background-color: #E6D5B8;
+    padding: 15px 30px;
+    margin: -30px -30px 30px -30px;
+    border-radius: 12px 12px 0 0;
+}
+
+.dashboard-header h1 {
+    color: #333;
+    font-size: 24px;
+}
+
+/* Statistics Cards Styling */
+.stats-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+    padding: 0 15px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.stat-card {
+    background-color: #273d88;
+    border-radius: 20px;
+    padding: 18px;
+    color: white;
+    width: 350px;
+    height: 250px;
+    box-shadow: 0 2px 8px rgba(43, 57, 144, 0.15);
+    display: flex; 
+    align-items: center;     
+}
+
+.stat-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.stat-info {
+    flex-grow: 1;
+}
+
+.stat-title {
+    font-size: 24px;
+    margin-bottom: 25px;
+    opacity: 0.9;
+    font-weight: medium;
+}
+
+.stat-number-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 25px;
+    width: 100%;
+}
+
+.stat-number {
+    font-size: 70px;
+    color: #D0AE62;
+    font-weight: medium;
+}
+
+.stat-comparison {
+    font-size: 15px;
+    font-weight: medium;
+    color: #FFFFFF;
+}
+
+.stat-icon {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.fa-users, .fa-shopping-cart, .fa-chart-line {
+    font-size: 30px;
+}
+
+.fa-users {
+    color: #FFFFFF;
+}
+
+.fa-shopping-cart {
+    color: #FFFFFF;
+}
+
+.fa-chart-line {
+    color: #FFFFFF;
+}
+
+/* Collaboration Section Styling */
+.collaboration-section {
+    margin-top: 30px;
+    padding: 0 15px;
+}
+
+.collab-title {
+    font-size: 20px;
+    color: #273d88;
+    margin-top: 10px;
+    margin-bottom: 12px;
+    font-weight: medium;
+    padding-left: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.collab-card {
+    background-color: white;
+    border-radius: 12px;
+    padding: 16px;
+    border: 1px solid #EAEAEA;
+    width: 1000px;             
+    height: 150px;             
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+}
+
+.collab-content {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.collab-logo {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-left: 20px;
+}
+
+.collab-names {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+    font-size: 20px;
+    color: #273d88;
+    margin-left: 20px;
+}
+
+.collab-x {
+    color: #000000;
+    font-size: 30px;
+}
+
+.collab-date {
+    font-size: 14px;
+    color: #000000;
+    margin-top: 4px;
+    margin-left: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .stats-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .stat-card {
+        margin-bottom: 15px;
+    }
+    
+    .dashboard-container {
+        margin: 10px;
+        padding: 20px;
+    }
+}

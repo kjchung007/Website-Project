@@ -1,0 +1,260 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins';
+}
+
+.logo {
+    width: 80px; 
+    height: auto;   
+    position: relative;
+    margin-left: 20px;
+    align-self: center;
+}
+
+nav {
+    height: 100px;
+    background: #FFFFFF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0rem calc((100vw - 1300px)/2);
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    padding: 0 1.5rem;
+}
+
+nav a:hover {
+    color: #263e88;
+}
+
+.nav-links {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.about-us-container {
+    position: relative;
+    display: inline-block;
+}
+
+.about-us-link {
+    position: relative;
+    display: block;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 100%; /* Position it right at the bottom of the container */
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    padding: 10px 0;
+    list-style: none;
+    z-index: 100;
+    width: 150px;
+    margin-top: 5px; /* Add space between link and dropdown */
+}
+
+/* Show dropdown when hovering over the container */
+.about-us-container:hover .dropdown {
+    display: block;
+}
+
+.dropdown::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 0;
+    right: 0;
+    height: 20px;
+}
+
+.dropdown li {
+    padding: 0;
+    white-space: nowrap;
+}
+
+.dropdown li a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+    text-align: center;
+}
+
+.dropdown li a:hover {
+    background: #f0f0f0;
+    color: #263e88;
+}
+
+.fa-user {
+    color: #e8b931;
+}
+
+.hero {
+    background: #1a237e; 
+    min-height: 100%;
+    position: relative;
+    margin-bottom: 50px;
+}
+
+.hero-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 100%;
+    padding: 0 calc((100vw - 1300px)/2);
+}
+
+.column-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    color: white;
+    padding: 4rem;
+}
+
+.column-left h1 {
+    margin-bottom: 2rem;
+    font-size: 3rem;
+    line-height: 1.2;
+}
+
+.column-left p {
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+.feature-list {
+    margin: 1rem 0;
+    list-style: none;
+}
+
+.feature-list li {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.feature-list li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: white;
+}
+
+button {
+    padding: 1rem 3rem;
+    font-size: 1rem;
+    border: none;
+    color: #FFFFFF;
+    background: #2b2b2b;
+    cursor: pointer;
+    border-radius: 50px;
+}
+
+button:hover {
+    background: #FFFFFF;
+    color: #1a237e;
+}
+
+.column-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    height: 100%;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    padding: 0rem 2rem;
+    margin-bottom: 50px;
+}
+
+.container p {
+    margin-bottom: 20px;  
+    font-size: 16px;
+}
+
+.social-icons {
+    display: flex;
+    flex-direction: row; 
+    justify-content: center;
+    align-items: center;
+    gap: 20px; 
+}
+
+.social-icons a {
+    text-decoration: none; 
+    color: inherit; 
+}
+
+.fa-facebook, .fa-instagram, .fa-tiktok {
+    font-size: 30px;
+}
+
+.fa-facebook {
+    color: #1a237e;
+}
+
+.fa-instagram {
+    color: #833AB4;
+}
+
+.fa-tiktok {
+    color: black;
+}
+
+.collab-btn {
+    background-color: #1a237e;
+    color: white !important;
+    padding: 0.5rem 1.5rem;
+    border-radius: 4px;
+}
+
+.tagline {
+    font-style: italic;
+    margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+    .hero-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .column-left {
+        padding: 2rem;
+    }
+    
+    .column-left h1 {
+        font-size: 2rem;
+    }
+    
+    nav {
+        padding: 0 1rem;
+    }
+}

@@ -1,0 +1,449 @@
+/* Navigation Styles */
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins';
+}
+
+nav {
+    height: 100px;
+    background: #FFFFFF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0rem calc((100vw - 1300px)/2);
+}
+
+.logo {
+    width: 80px;
+    height: auto;
+    margin-left: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    padding: 0 1.5rem;
+}
+
+nav a:hover {
+    color: #263e88;
+}
+
+.nav-links {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.about-us-container {
+    position: relative;
+    display: inline-block;
+}
+
+.about-us-link {
+    position: relative;
+    display: block;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 100%; /* Position it right at the bottom of the container */
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    padding: 10px 0;
+    list-style: none;
+    z-index: 100;
+    width: 150px;
+    margin-top: 5px; /* Add space between link and dropdown */
+}
+
+/* Show dropdown when hovering over the container */
+.about-us-container:hover .dropdown {
+    display: block;
+}
+
+.dropdown::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 0;
+    right: 0;
+    height: 20px;
+}
+
+.dropdown li {
+    padding: 0;
+    white-space: nowrap;
+}
+
+.dropdown li a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+    text-align: center;
+}
+
+.dropdown li a:hover {
+    background: #f0f0f0;
+    color: #263e88;
+}
+
+.collab-btn {
+    background-color: #1a237e;
+    color: white !important;
+    padding: 0.5rem 1.5rem;
+    border-radius: 4px;
+}
+
+.fa-user {
+    color: #e8b931;
+}
+
+/* Profile Navigation */
+.profile-nav {
+    width: 250px;
+    padding: 0;
+    margin-right: 2rem;
+}
+
+.profile-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.profile-nav li {
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.profile-nav a {
+    color: #666;
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 0.5rem 0;
+    display: block;
+    transition: color 0.3s ease;
+}
+
+.profile-nav a:hover {
+    color: #1a237e;
+}
+
+.profile-nav a.active {
+    color: #e8b931;
+    font-weight: 500;
+    position: relative;
+}
+
+.profile-nav a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background-color: #e8b931;
+}
+
+/* Voucher section */
+.vouchers-section {
+    margin-top: 2rem;
+    padding: 2rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.voucher-form {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.voucher-input {
+    flex: 1;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.claim-btn {
+    background: #1a237e;
+    color: white;
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.claim-btn:hover {
+    background: #263238;
+}
+
+/* Progress bar styling */
+.progress-bar {
+    width: 100%;
+    height: 10px;
+    background: #f0f0f0;
+    border-radius: 5px;
+    margin: 1rem 0;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: #e8b931;
+    transition: width 0.3s ease;
+}
+
+/* Profile Content Styles */
+.profile-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.profile-header {
+    background: #E6D5B8;
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+}
+
+.profile-header h1 {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    color: #333;
+}
+
+.profile-content {
+    flex: 1;
+    padding: 0;
+}
+
+.profile-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.profile-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: #ddd;
+    margin-right: 1.5rem;
+}
+
+/* Rewards card styling */
+.rewards-card {
+    background: white;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.rewards-image {
+    width: 150px;
+    height: auto;
+}
+
+.rewards-info {
+    flex: 1;
+}
+
+.points-display {
+    font-size: 2rem;
+    color: #e8b931;
+    margin: 0.5rem 0;
+}
+
+.points-progress {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Add better spacing for the footer */
+footer {
+    background: #f5f5f5;
+    padding: 2rem 0;
+    margin-top: 4rem;
+    width: 100%;
+}
+
+/* Footer Styles */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    padding: 0rem 2rem;
+    margin-bottom: 50px;
+}
+
+.container p {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.social-icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.social-icons a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.fa-facebook, .fa-instagram, .fa-tiktok {
+    font-size: 30px;
+}
+
+.fa-facebook {
+    color: #1a237e;
+}
+
+.fa-instagram {
+    color: #833AB4;
+}
+
+.fa-tiktok {
+    color: black;
+}
+
+/****for profile my rewards*******/
+.vouchers-container {
+    flex: 1;
+    padding: 20px;
+    max-width: 800px;
+}
+
+.voucher-card {
+    display: flex;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+.voucher-left {
+    background: #f8f4eb;
+    padding: 20px;
+    min-width: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+.voucher-left::after {
+    content: '';
+    position: absolute;
+    right: -10px;
+    top: 0;
+    height: 100%;
+    width: 20px;
+    background-image: radial-gradient(circle at 0 50%, transparent 10px, white 10px);
+    background-size: 20px 20px;
+    background-repeat: repeat-y;
+}
+
+.voucher-label {
+    color: #b3935b;
+    font-size: 0.8em;
+    margin-bottom: 5px;
+}
+
+.voucher-amount {
+    color: #b3935b;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.voucher-amount span {
+    font-size: 0.6em;
+    margin-left: 5px;
+}
+
+.voucher-right {
+    padding: 20px;
+    flex: 1;
+    position: relative;
+}
+
+.voucher-title {
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.voucher-validity {
+    color: #666;
+    font-size: 0.9em;
+    margin-bottom: 10px;
+}
+
+.voucher-thumb{
+    width: 150px;  
+    height: 80px; 
+}
+
+.status {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 0.8em;
+    padding: 3px 8px;
+    border-radius: 3px;
+}
+
+.status.active {
+    background: #e8f5e9;
+    color: #2e7d32;
+}
+
+.status.past {
+    background: #ffebee;
+    color: #c62828;
+}
+
+.use-now-btn {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background: #000;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+}
+
+.use-now-btn:hover {
+    background: #333;
+}
